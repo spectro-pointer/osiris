@@ -1,3 +1,4 @@
+const baseURL = "http://10.10.3.134:8080/coordinates?"
 
 const cameras = [{
   label: "camera1",
@@ -29,11 +30,17 @@ function initCameras() {
     topElement.appendChild(cameraElement);
     cameraElement.className = "video-container";
     cameraElement.innerHTML = `
-      <img id="video" src="${camera.source}">
-      <svg width="100%" height="100%" id="azimuth"></svg>
-      <svg width="100%" height="100%" id="elevation"></svg>
-      <div id="mouseCoordinates"></div>`;
+      <img class="video" id="${camera.label}" src="${camera.source}">
+      <svg class="azimuth" width="100%" height="100%" id="azimuth_${camera.label}"></svg>
+      <svg class="elevation" width="100%" height="100%" id="elevation_${camera.label}"></svg>
+      <div class="mouseCoordinates" id="mouseCoordinates_${camera.label}"></div>`;
     target?.appendChild(topElement);
+
+    const videoPlayer = document.getElementById(camera.label);
+    addListener(videoPlayer);
+
+
+
   }
 }
 

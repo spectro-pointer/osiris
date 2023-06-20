@@ -5,17 +5,17 @@
   height: 480px;
 }
 
-#videoPlayer {
+.videoPlayer {
   width: 100%;
   height: auto;
 }
 
-#video {
+.video {
   position: absolute;
 }
 
-#azimuth,
-#elevation {
+.azimuth,
+.elevation {
   position: absolute;
   pointer-events: none;
 }
@@ -25,7 +25,7 @@
   stroke-width: 2;
 }
 
-#mouseCoordinates {
+.mouseCoordinates {
   position: absolute;
   top: 10px;
   left: 10px;
