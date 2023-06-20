@@ -1,6 +1,8 @@
 .video-container {
   position: relative;
   display: inline-block;
+  width: 640px;
+  height: 480px;
 }
 
 #videoPlayer {
@@ -8,7 +10,7 @@
   height: auto;
 }
 
-#myVideo {
+#video {
   position: absolute;
 }
 
