@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Video Stream with Mouse Coordinates</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="video-container">
+          <img id="myVideo" src="http://10.10.3.134:8086/video_feed" width="640" height="480">
+          <svg width=640 height=480 id="azimuth"></svg>
+          <svg width=640 height=480 id="elevation"></svg>
+
+          <div id="mouseCoordinates"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./function.js"></script>
+
+</body>
+
+</html>

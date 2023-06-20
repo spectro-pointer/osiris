@@ -1,0 +1,32 @@
+.video-container {
+  position: relative;
+  display: inline-block;
+}
+
+#videoPlayer {
+  width: 100%;
+  height: auto;
+}
+
+#myVideo {
+  position: absolute;
+}
+
+#azimuth,
+#elevation {
+  position: absolute;
+  pointer-events: none;
+}
+
+.mouse-line {
+  stroke: lime;
+  stroke-width: 2;
+}
+
+#mouseCoordinates {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 18px;
+}
