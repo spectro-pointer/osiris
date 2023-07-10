@@ -1,4 +1,4 @@
-const baseURL = "http://10.10.1.30:8080/coordinates?"
+const baseURL = "http://192.168.1.30/"
 
 const cameras = [{
   label: "camera1",
