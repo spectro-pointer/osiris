@@ -1,16 +1,16 @@
-const baseURL = "http://10.10.3.134:8080/coordinates?"
+const baseURL = "http://10.10.1.30:8080/coordinates?"
 
 const cameras = [{
   label: "camera1",
   description: "Camera 1 description",
-  source: "http://10.10.3.134:8086/video_feed",
+  source: "http://192.168.157:8086/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 }
 },
 {
   label: "camera2",
   description: "Camera 2 description",
-  source: "http://10.10.3.134:8086/video_feed",
+  source: "http://192.168.1.210:8088/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 }
 }];
