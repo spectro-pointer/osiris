@@ -81,3 +81,38 @@ buttons.addEventListener('mousedown', function(event) {
 buttons.ondragstart = function() {
   return false;
 };
+
+// Valores iniciales
+let lastAzimuth = 0;
+let lastElevation = 0;
+
+// Define los incrementos
+const azimutIncremento = 1; // Ajusta este valor según sea necesario
+const elevacionIncremento = 1; // Ajusta este valor según sea necesario
+
+// Cuando se haga clic en las flechas, modifica los últimos valores de azimut y elevación y envía una nueva petición.
+document.getElementById('boton-azimut-incrementar').addEventListener('click', () => enviarNuevoValor(lastAzimuth + azimutIncremento, lastElevation));
+document.getElementById('boton-azimut-decrementar').addEventListener('click', () => enviarNuevoValor(lastAzimuth - azimutIncremento, lastElevation));
+document.getElementById('boton-elevacion-incrementar').addEventListener('click', () => enviarNuevoValor(lastAzimuth, lastElevation + elevacionIncremento));
+document.getElementById('boton-elevacion-decrementar').addEventListener('click', () => enviarNuevoValor(lastAzimuth, lastElevation - elevacionIncremento));
+
+// Historial de valores
+let azimuthHistory = [];
+let elevationHistory = [];
+
+async function enviarNuevoValor(azimut, elevacion) {
+  lastAzimuth = azimut;
+  lastElevation = elevacion;
+
+  // Actualiza el historial y el texto de los elementos
+  azimuthHistory.push(lastAzimuth);
+  elevationHistory.push(lastElevation);
+  document.getElementById('azimuth-display').textContent = `Azimuth: ${lastAzimuth}`;
+  document.getElementById('azimuth-history').textContent = `Historial de Azimuth: ${azimuthHistory.join(', ')}`;
+  document.getElementById('elevation-display').textContent = `Elevación: ${lastElevation}`;
+  document.getElementById('elevation-history').textContent = `Historial de Elevación: ${elevationHistory.join(', ')}`;
+
+  const url = baseURL + Math.round(azimut) + "," + Math.round(elevacion);
+  const response = await fetch(url);
+  console.log(response);
+}
