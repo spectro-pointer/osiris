@@ -45,3 +45,39 @@ function initCameras() {
 }
 
 initCameras();
+
+const buttons = document.querySelector('.control-buttons');
+
+buttons.addEventListener('mousedown', function(event) {
+  // El cursor del ratón en el momento del evento de ratón
+  let shiftX = event.clientX - buttons.getBoundingClientRect().left;
+  let shiftY = event.clientY - buttons.getBoundingClientRect().top;
+
+  // Centra el buttons bajo el cursor
+  function moveAt(pageX, pageY) {
+    buttons.style.left = pageX - shiftX + 'px';
+    buttons.style.top = pageY - shiftY + 'px';
+  }
+
+  // Mueve el buttons al momento del click del ratón
+  moveAt(event.pageX, event.pageY);
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  // Mueve el buttons al mover el ratón
+  document.addEventListener('mousemove', onMouseMove);
+
+  // Suelta el buttons al soltar el botón del ratón
+  buttons.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    buttons.onmouseup = null;
+  };
+
+});
+
+// Previene el comportamiento por defecto del navegador
+buttons.ondragstart = function() {
+  return false;
+};
