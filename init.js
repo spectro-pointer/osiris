@@ -107,6 +107,13 @@ async function enviarNuevoValor(azimut, elevacion) {
   // Actualiza el historial y el texto de los elementos
   azimuthHistory.push(lastAzimuth);
   elevationHistory.push(lastElevation);
+
+  // limitar los array 
+  if (azimuthHistory.length > 5) {
+    azimuthHistory = azimuthHistory.slice(-5);
+    elevationHistory = elevationHistory.slice(-5);
+  }
+
   document.getElementById('azimuth-display').textContent = `Azimuth: ${lastAzimuth}`;
   document.getElementById('azimuth-history').textContent = `Historial de Azimuth: ${azimuthHistory.join(', ')}`;
   document.getElementById('elevation-display').textContent = `Elevación: ${lastElevation}`;
