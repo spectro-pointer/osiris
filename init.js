@@ -101,8 +101,8 @@ let azimuthHistory = [];
 let elevationHistory = [];
 
 async function enviarNuevoValor(azimut, elevacion) {
-  lastAzimuth = azimut;
-  lastElevation = elevacion;
+  lastAzimuth = Math.round(azimut);
+  lastElevation = Math.round(elevacion);
 
   // Actualiza el historial y el texto de los elementos
   azimuthHistory.push(lastAzimuth);
@@ -119,7 +119,7 @@ async function enviarNuevoValor(azimut, elevacion) {
   document.getElementById('elevation-display').textContent = `Elevación: ${lastElevation}`;
   document.getElementById('elevation-history').textContent = `Historial de Elevación: ${elevationHistory.join(', ')}`;
 
-  const url = baseURL + Math.round(azimut) + "," + Math.round(elevacion);
+  const url = baseURL + lastAzimuth + "," + lastElevation;
   const response = await fetch(url);
   console.log(response);
 }

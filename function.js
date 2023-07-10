@@ -5,11 +5,7 @@
 function addListener(videoPlayer) {
   videoPlayer.addEventListener("click", async (event) => {
     const { azimuthDegrees, elevationDegrees } = getMousePosition(event);
-    const url = baseURL + Math.round(azimuthDegrees) + "," + Math.round(elevationDegrees);
-
-    const response = await fetch(url)
-    console.log(response)
-
+    await enviarNuevoValor(azimuthDegrees, elevationDegrees);
   })
 
   videoPlayer.addEventListener("mousemove", (event) => {
