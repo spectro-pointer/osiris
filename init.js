@@ -4,15 +4,15 @@ const cameras = [{
   label: "camera1",
   description: "Camera 1 description",
   source: "http://192.168.157:8086/video_feed",
-  azimuth: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 },
-  elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 }
+  azimuth: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 180 },
+  elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax:-25 }
 },
 {
   label: "camera2",
   description: "Camera 2 description",
   source: "http://192.168.1.210:8088/video_feed",
-  azimuth: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 },
-  elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 }
+  azimuth: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 190 },
+  elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 }];
 
 function initCameras() {
