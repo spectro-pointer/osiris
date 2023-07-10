@@ -3,7 +3,7 @@ const baseURL = "http://192.168.1.30/"
 const cameras = [{
   label: "camera1",
   description: "Camera 1 description",
-  source: "http://192.168.157:8086/video_feed",
+  source: "http://192.168.1.210:8088/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 180 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax:-25 }
 },
