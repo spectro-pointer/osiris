@@ -165,3 +165,4 @@ async function enviarNuevoValor(azimut, elevacion) {
   const response = await fetch(url);
   console.log(response);
 }
+
