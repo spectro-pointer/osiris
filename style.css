@@ -50,3 +50,14 @@
   position: absolute;
   cursor: move;
 }
+/* style.css */
+
+body {
+  background-color: white;
+  color: black;
+}
+
+body.night-mode {
+  background-color: black;
+  color: red;
+}

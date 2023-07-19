@@ -137,6 +137,11 @@ document.getElementById('boton-azimut-incrementar').addEventListener('click', ()
 document.getElementById('boton-azimut-decrementar').addEventListener('click', () => enviarNuevoValor(lastAzimuth - azimutIncremento, lastElevation));
 document.getElementById('boton-elevacion-incrementar').addEventListener('click', () => enviarNuevoValor(lastAzimuth, lastElevation + elevacionIncremento));
 document.getElementById('boton-elevacion-decrementar').addEventListener('click', () => enviarNuevoValor(lastAzimuth, lastElevation - elevacionIncremento));
+// function.js or init.js
+// modo nocturno
+document.getElementById('night-mode-toggle').onclick = function() {
+  document.body.classList.toggle('night-mode');
+}
 
 // Historial de valores
 let azimuthHistory = [];
