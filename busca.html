@@ -9,11 +9,12 @@
 
 <body>
   <button id="night-mode-toggle">Modo nocturno</button>
+  <!--
   <div id="videoContainer">
-    <img class="video" id="video" src="http://192.168.1.57:8086/video_feed">
-    <!-- Aquí irá el video -->
+    
   </div>
-  <div id="cameras" style="display: flex"></div>
+-->
+  <div id="buscador" style="display: flex"></div>
 
   <div class="control-buttons">
     <button id="boton-azimut-incrementar">⬆️ Incrementar Azimuth</button>
@@ -26,9 +27,17 @@
     <p id="elevation-display">Elevación: 0</p>
     <p id="elevation-history">Historial de Elevación: []</p>
   </div>
+  <button id="to-other-page">Ir a la otra página</button>
+
+<script>
+document.getElementById("to-other-page").addEventListener("click", function() {
+  window.location.href = "index.html";  // Cambia esto a la ruta de tu segunda página
+});
+</script>
+
 
   <script src="./function.js"></script>
-  <script src="./init.js"></script>
+  <script src="./buscador.js"></script>
   
   
   
