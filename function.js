@@ -21,7 +21,7 @@ function addListener(videoPlayer) {
 }
 
 
-
+/*
 function getMousePosition(event) {
   const cameraLabel = event.target.id
   const camera = cameras.find((camera) => camera.label === cameraLabel);
@@ -41,5 +41,5 @@ function mapRange(value, options) {
   return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 }
 
-
+*/
 

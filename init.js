@@ -170,4 +170,22 @@ async function enviarNuevoValor(azimut, elevacion) {
   const response = await fetch(url);
   console.log(response);
 }
+// funcion test mausi sacada de funcion
+function getMousePosition(event) {
+  const cameraLabel = event.target.id
+  const camera = cameras.find((camera) => camera.label === cameraLabel);
+  const rect = document.getElementById(cameraLabel).getBoundingClientRect();
+  const mouseX = event.clientX - rect.left;
+  const mouseY = event.clientY - rect.top;
+  const azimuthDegrees = mapRange(mouseX / rect.width, camera?.azimuth);
+  const elevationDegrees = mapRange(mouseY / rect.height, camera?.elevation);
 
+  return { mouseX, mouseY, azimuthDegrees, elevationDegrees };
+}
+
+
+
+function mapRange(value, options) {
+  const { inMin, inMax, outMin, outMax } = options;
+  return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+}

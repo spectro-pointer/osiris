@@ -5,7 +5,7 @@ const cameras = [{
   label: "camera1",
   description: "Zonn SONY",
   source: "http://192.168.1.57:8086/video_feed",
-  azimuth: { inMin: 0.001, inMax: 1, outMin: 0, outMax: 45 },
+  azimuth: { inMin: 0.001, inMax: 1, outMin: 0, outMax: 360 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax:-25 }
 },
 {
@@ -138,4 +138,76 @@ async function enviarNuevoValor(azimut, elevacion) {
   const response = await fetch(url);
   console.log(response);
 }
+// control joisty
+ /*
+var control = document.getElementById("joystick-control");
+var base = document.getElementById("joystick-base");
+
+var dragging = false;
+var baseRect = base.getBoundingClientRect();
+var baseCenterX = baseRect.left + baseRect.width / 2;
+var baseCenterY = baseRect.top + baseRect.height / 2;
+var maxRadius = baseRect.width / 2 - control.offsetWidth / 2;
+
+control.style.left = baseRect.width / 2 - control.offsetWidth / 2 + "px";
+control.style.top = baseRect.height / 2 - control.offsetHeight / 2 + "px";
+
+control.addEventListener("mousedown", function() {
+  dragging = true;
+});
+
+window.addEventListener("mouseup", function() {
+  dragging = false;
+  control.style.left = baseRect.width / 2 - control.offsetWidth / 2 + "px";
+  control.style.top = baseRect.height / 2 - control.offsetHeight / 2 + "px";
+});
+
+window.addEventListener("mousemove", function(event) {
+  if (dragging) {
+    var x = event.clientX - baseCenterX;
+    var y = event.clientY - baseCenterY;
+
+    var distance = Math.sqrt(x * x + y * y);
+    if (distance < maxRadius) {
+      control.style.left = x + baseRect.width / 2 - control.offsetWidth / 2 + "px";
+      control.style.top = y + baseRect.height / 2 - control.offsetHeight / 2 + "px";
+    }
+  }
+});
+*/
+// ...
+var azimuth = 0, elevation = 0;
+var increment = 1;  // Define the amount by which azimuth and elevation will change
+
+window.addEventListener("mousemove", function(event) {
+  if (dragging) {
+    var x = event.clientX - baseCenterX;
+    var y = event.clientY - baseCenterY;
+
+    var distance = Math.sqrt(x * x + y * y);
+    if (distance < maxRadius) {
+      control.style.left = x + baseRect.width / 2 - control.offsetWidth / 2 + "px";
+      control.style.top = y + baseRect.height / 2 - control.offsetHeight / 2 + "px";
+
+      // Increment or decrement azimuth and elevation based on joystick position
+      if (x > 0) {
+        azimuthzimuth += increment;
+      } azimuth -= increment;
+      }
+
+      if (y > 0) {
+        elevation += increment;
+      } else if (y < 0) {
+        elevation -= increment;
+      }
+      console.log(response);
+
+      // Here you would send the new azimuth and elevation values to the server
+      // sendNewValue(azimuth, elevation);
+    
+  }
+});
+// ...
+
+
 
