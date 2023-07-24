@@ -138,6 +138,47 @@ async function enviarNuevoValor(azimut, elevacion) {
   const response = await fetch(url);
   console.log(response);
 }
+
+/*
+function getMousePosition(event) {
+  const cameraLabel = event.target.id
+  const camera = cameras.find((camera) => camera.label === cameraLabel);
+  const rect = document.getElementById(cameraLabel).getBoundingClientRect();
+  const mouseX = event.clientX - rect.left;
+  const mouseY = event.clientY - rect.top;
+  const azimuthDegrees = mapRange(mouseX / rect.width, camera?.azimuth);
+  const elevationDegrees = mapRange(mouseY / rect.height, camera?.elevation);
+
+  return { mouseX, mouseY, azimuthDegrees, elevationDegrees };
+}
+
+
+
+function mapRange(value, options) {
+  const { inMin, inMax, outMin, outMax } = options;
+  return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // control joisty
  /*
 var control = document.getElementById("joystick-control");
@@ -174,7 +215,7 @@ window.addEventListener("mousemove", function(event) {
     }
   }
 });
-*/
+
 // ...
 var azimuth = 0, elevation = 0;
 var increment = 1;  // Define the amount by which azimuth and elevation will change
@@ -208,6 +249,6 @@ window.addEventListener("mousemove", function(event) {
   }
 });
 // ...
-
+*/
 
 
