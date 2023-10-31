@@ -106,6 +106,7 @@ function addMouseListener(id, azimuthIncrement, elevationIncrement) {
   console.log(id);
   // Cuando se haga clic en las flechas, modifica los últimos valores de azimut y elevación y envía una nueva petición.
   document.getElementById(id).addEventListener("mousedown", () => {
+    clearInterval(intervalEventID);
     intervalEventID = setInterval(() => {
       enviarNuevoValor(
         lastAzimuth + azimuthIncrement,
