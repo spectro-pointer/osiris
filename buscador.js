@@ -97,42 +97,26 @@ const interval = 200; // Intervalo de tiempo en milisegundos
 const azimutIncremento = 1; // Ajusta este valor según sea necesario
 const elevacionIncremento = 1; // Ajusta este valor según sea necesario
 
-// Cuando se haga clic en las flechas, modifica los últimos valores de azimut y elevación y envía una nueva petición.
-document
-  .getElementById("boton-azimut-incrementar")
-  .addEventListener("mousedown", () => {
+addMouseListener("boton-azimut-incrementar", azimutIncremento, 0);
+addMouseListener("boton-azimut-decrementar", -azimutIncremento, 0);
+addMouseListener("boton-elevacion-incrementar", 0, elevacionIncremento);
+addMouseListener("boton-elevacion-decrementar", 0, -elevacionIncremento);
+
+function addMouseListener(id, azimuthIncrement, elevationIncrement) {
+  console.log(id);
+  // Cuando se haga clic en las flechas, modifica los últimos valores de azimut y elevación y envía una nueva petición.
+  document.getElementById(id).addEventListener("mousedown", () => {
     intervalEventID = setInterval(() => {
-      enviarNuevoValor(lastAzimuth + azimutIncremento, lastElevation);
+      enviarNuevoValor(
+        lastAzimuth + azimuthIncrement,
+        lastElevation + elevationIncrement
+      );
     }, interval);
   });
-document
-  .getElementById("boton-azimut-incrementar")
-  .addEventListener("mouseup", () => {
+  document.getElementById(id).addEventListener("mouseup", () => {
     clearInterval(intervalEventID);
   });
-
-document
-  .getElementById("boton-azimut-decrementar")
-  .addEventListener("click", () =>
-    enviarNuevoValor(lastAzimuth - azimutIncremento, lastElevation)
-  );
-
-document
-  .getElementById("boton-elevacion-incrementar")
-  .addEventListener("click", () =>
-    enviarNuevoValor(lastAzimuth, lastElevation + elevacionIncremento)
-  );
-
-document
-  .getElementById("boton-elevacion-decrementar")
-  .addEventListener("click", () =>
-    enviarNuevoValor(lastAzimuth, lastElevation - elevacionIncremento)
-  );
-// function.js or init.js
-// modo nocturno
-document.getElementById("night-mode-toggle").onclick = function () {
-  document.body.classList.toggle("night-mode");
-};
+}
 
 // Historial de valores
 let azimuthHistory = [];
