@@ -91,7 +91,7 @@ let lastAzimuth = 0;
 let lastElevation = 0;
 
 let intervalEventID;
-const interval = 200; // Intervalo de tiempo en milisegundos
+const interval = 100; // Intervalo de tiempo en milisegundos
 
 // Define los incrementos
 const azimutIncremento = 1; // Ajusta este valor según sea necesario
