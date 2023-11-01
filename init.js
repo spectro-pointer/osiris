@@ -3,59 +3,60 @@ const baseURL = "http://192.168.1.30/"
 const cameras = [{
   label: "camera1",
   description: "vision 0 a 45 ",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.161:8001/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 0, outMax: 45 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax:-25 }
 },
 {
   label: "camera2",
   description: "vision 45 a 90 degres",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.74:8002/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 },
 {
   label: "camera3",
   description: "vision 90 a 135 degres",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.226:8003/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 90, outMax: 135 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 },
 {
   label: "camera4",
   description: "vision 135 a 180 degres",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.169:8004/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 135, outMax: 180 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 },
 {
   label: "camera5",
   description: "vision 180 a 225 degres",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.80:8005/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 180, outMax: 225 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 },
 {
   label: "camera6",
   description: "vision 225 a 270 Degres",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.225:8006/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 225, outMax: 270 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 },
 {
   label: "camera7",
   description: "vision 270 a 315 Degres",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.99:8007/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 270, outMax: 315 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 },
 {
   label: "camera8",
   description: "vision 315 a 360 Degres",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.63:8008/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 315, outMax: 360 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 }];
+
 
 function initCameras() {
 
