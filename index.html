@@ -65,6 +65,16 @@ function videoMove(e){
   videoContainer.style.top = e.clientY + 'px';
   videoContainer.style.left = e.clientX + 'px';
 }
+// Suponiendo que estas funciones existen y son llamadas cuando los valores cambian
+function updateAzimuth(value) {
+  // ... código existente para actualizar el valor de azimut
+  localStorage.setItem('azimuth', value);
+}
+
+function updateElevation(value) {
+  // ... código existente para actualizar el valor de elevación
+  localStorage.setItem('elevation', value);
+}
 
 
   </script>
