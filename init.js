@@ -57,7 +57,6 @@ const cameras = [{
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 }];
 
-
 function initCameras() {
 
   const target = document.getElementById("cameras");
@@ -184,6 +183,12 @@ function getMousePosition(event) {
   return { mouseX, mouseY, azimuthDegrees, elevationDegrees };
 }
 
+
+
+function mapRange(value, options) {
+  const { inMin, inMax, outMin, outMax } = options;
+  return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+}
 
 
 function mapRange(value, options) {
