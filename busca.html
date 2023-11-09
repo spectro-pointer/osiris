@@ -103,5 +103,27 @@ function videoMove(e){
   </script>
 
 </body>
+// Agrega este script al final del <body>
+<script>
+window.addEventListener('storage', function(event) {
+  if (event.key === 'azimuth') {
+    // Actualiza la interfaz de usuario con el nuevo valor de azimuth
+    document.getElementById('azimuth-display').textContent = 'Azimuth: ' + event.newValue;
+  }
+  if (event.key === 'elevation') {
+    // Actualiza la interfaz de usuario con el nuevo valor de elevation
+    document.getElementById('elevation-display').textContent = 'Elevación: ' + event.newValue;
+  }
+});
+</script>
+// Agrega este script también al final del <body> en busca.html
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const azimuth = localStorage.getItem('azimuth');
+  const elevation = localStorage.getItem('elevation');
+  document.getElementById('azimuth-display').textContent = 'Azimuth: ' + azimuth;
+  document.getElementById('elevation-display').textContent = 'Elevación: ' + elevation;
+});
+</script>
 
 </html>
