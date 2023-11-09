@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta charset="ISO-8859-1">
   <title>Video Stream with Mouse Coordinates</title>
   <link rel="stylesheet" href="./style.css">
  
@@ -17,6 +18,11 @@
   <div id="buscador" style="display: flex"></div>
 
   <div class="control-buttons">
+    <label class="switch">
+    <input type="checkbox" id="ledSwitch">
+    <span class="slider round"></span>
+    </label>
+
     <button id="boton-azimut-incrementar">⬆️ Incrementar Azimuth</button>
     <button id="boton-azimut-decrementar">⬇️ Decrementar Azimuth</button>
     <p id="azimuth-display">Azimuth: 0</p>
@@ -27,12 +33,33 @@
     <p id="elevation-display">Elevación: 0</p>
     <p id="elevation-history">Historial de Elevación: []</p>
     
-
-  </div>
-  <div id="joystick-base">
-   <div id="joystick-control"></div>
   </div>
   <button id="to-other-page">Ir a la otra página</button>
+ // control de led tracker
+  <script>
+var ledSwitch = document.getElementById("ledSwitch");
+
+ledSwitch.addEventListener('change', function() {
+  var state = this.checked ? 'ON' : 'OFF';
+  
+  fetch('http://192.168.1.57:5000/led', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({state: state}),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+});
+</script>
+
+  
 
 <script>
 document.getElementById("to-other-page").addEventListener("click", function() {
