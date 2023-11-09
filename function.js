@@ -1,7 +1,3 @@
-
-
-
-
 function addListener(videoPlayer) {
   videoPlayer.addEventListener("click", async (event) => {
     const { azimuthDegrees, elevationDegrees } = getMousePosition(event);
