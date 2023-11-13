@@ -11,14 +11,14 @@ const cameras = [{
 {
   label: "camera2",
   description: "py_angular",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.211:8009/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 45, outMax: 90 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 },
 {
   label: "camera3",
   description: "py_telex",
-  source: "http://192.168.1.210:8088/video_feed",
+  source: "http://192.168.1.211:8009/video_feed",
   azimuth: { inMin: 0.001, inMax: 1, outMin: 90, outMax: 135 },
   elevation: { inMin: 0.001, inMax: 1, outMin: 45, outMax: -25 }
 
